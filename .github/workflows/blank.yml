@@ -34,4 +34,4 @@ jobs:
         run: |
           ffmpeg -version
           pwd
-          ls /
+          curl http://cip.cc
