@@ -24,7 +24,8 @@ jobs:
         sudo apt-get install -y ffmpeg zip
     - name: Create videos directory
       run: |
-        mkdir -p /videos
+        pwd
+        sudo mkdir -p /videos
         
     - name: Batch download videos
       run: |
