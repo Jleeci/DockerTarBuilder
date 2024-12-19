@@ -30,8 +30,10 @@ jobs:
     - name: Batch download videos
       run: |
         VIDEO_URLS="${{ github.event.inputs.urls }}"
+        index=1;
         for url in $VIDEO_URLS; do
-          ffmpeg -threads 3 -i "$url"  -c copy  /videos/
+          ffmpeg -threads 3 -i "$url"  -c copy  /videos/$index.mp4
+          ((index++))
         done
 
     - name: Create zip file
